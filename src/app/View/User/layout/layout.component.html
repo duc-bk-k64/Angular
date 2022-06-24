@@ -1,0 +1,11 @@
+<div class="w3-bar w3-black">
+    <a class="w3-button"  [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+    <a class="w3-button"  [routerLink]="['/infor']" routerLinkActive="router-link-active">Information</a>
+    <a class="w3-button"  [routerLink]="['/student']" routerLinkActive="router-link-active">Student</a>
+    <a class="w3-button w3-red w3-right" (click)="logout()">Logout</a>
+    <button class="w3-button w3-black w3-right">Search</button>
+    <input type="text" class="w3-right" placeholder="Search" style="margin:5px">
+  </div>
+  <div class="w3-container">
+    <router-outlet></router-outlet>
+  </div>

@@ -1,0 +1,43 @@
+<div class="w3-card-4">
+    <!-- <div> -->
+        <h3 class="w3-center">Student Page</h3>
+        <button class="w3-button w3-blue w3-right" (click)="getStudent()">All Student</button>
+    <!-- </div> -->
+    <div>
+        <table class="w3-table w3-striped w3-mobile">
+            <thead>
+                <tr>
+                    <th><span>Student_Code</span></th>
+                    <th><span>Name</span></th>
+                    <th><span>Address</span></th>
+                    <th><span>Phone_Number</span></th>
+                    <th><span>Image_Url</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of student" (click)="onSelect(item)">
+                    <td>{{item.Student_code}}</td>
+                    <td>{{item.Name}}</td>
+                    <td>{{item.Address}}</td>
+                    <td>{{item.PhoneNumber}}</td>
+                    <td>{{item.ImageURL}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="w3-card-4">
+        <div *ngIf="selectedStudent" class="w3-center">
+            <h2>{{selectedStudent.Student_code}}</h2>
+            <p>{{selectedStudent.Name}}</p>
+        </div>
+    </div>
+   <div class="w3-row">
+    <div *ngFor="let item of student" class="w3-third w3-card-4 w3-center">
+        
+            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="border-radius: 50%; width: 30%;">
+            <p>{{item.Address}}</p>
+            <a [routerLink]="['/route',item.Student_code]" routerLinkActive="router-link-active" class="w3-button w3-black">{{item.Name}}</a>
+    
+    </div>
+  </div>
+</div>

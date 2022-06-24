@@ -1,0 +1,22 @@
+
+<div class="w3-container w3-card-4 w3-margin">
+    <div class="w3-center" style="box-sizing:content-box;">
+        <h3>Welcome</h3>
+        <img src="https://www.w3schools.com/howto/img_avatar.png" style="width:150px ;height:150px; border-radius:50%">
+        <div class="w3-margin">
+            <!-- <input type="text" [(ngModel)]="loginform.username" placeholder="Username" required/> -->
+            <label for="username" class="w3-margin">Username</label>
+            <input type="text" name="username" class="w3-margin" placeholder="Username" [(ngModel)]="loginform.username" required/> <br>
+            <div *ngIf="loginform.username==''">
+                <span style="color:red">Username is null</span>
+            </div>
+            <label for="password" class="w3-margin">Password</label>
+            <input type="password" name="password" class="w3-margin" placeholder="Password" [(ngModel)]="loginform.password" required/> <br>
+            <div *ngIf="loginform.password==''">
+                <span style="color:red">Password is null</span>
+            </div>
+            <button class="w3-button w3-black" (click)="loginredirect()">Login</button>
+        </div>
+
+    </div>
+</div>
